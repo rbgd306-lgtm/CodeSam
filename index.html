@@ -578,7 +578,43 @@ function renderWon(fromMain){
 renderStart();
 </script>
 </body>
-</html>    max-width:980px;
+</html><!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qui gagnera le million — Code de la route allemand</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --asphalt: #17191c;
+    --asphalt-2: #212429;
+    --line-white: #f4f4f2;
+    --autobahn-blue: #0a2f6b;
+    --autobahn-blue-2: #123a82;
+    --signal-yellow: #ffcf3f;
+    --ampel-red: #d3352a;
+    --ampel-green: #3fa66a;
+    --muted: #9099a6;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:
+      repeating-linear-gradient(0deg, transparent, transparent 78px, rgba(244,244,242,0.05) 78px, rgba(244,244,242,0.05) 82px),
+      var(--asphalt);
+    color:var(--line-white);
+    font-family:'Barlow', sans-serif;
+    min-height:100vh;
+    display:flex;
+    align-items:flex-start;
+    justify-content:center;
+    padding:28px 16px 60px;
+  }
+  .stage{
+    width:100%;
+    max-width:980px;
     display:grid;
     grid-template-columns: 1fr 220px;
     gap:22px;
@@ -837,86 +873,86 @@ renderStart();
 <body>
 <div class="stage">
   <div class="header">
-    <div class="title-sign"><span>Prüfung · Straßenverkehr</span>Wer gewinnt die Million?</div>
-    <div class="total-badge" id="totalBadge"><small>Gewinn</small>0 €</div>
+    <div class="title-sign"><span>Prüfung · Straßenverkehr</span>Qui gagnera le million ?</div>
+    <div class="total-badge" id="totalBadge"><small>Cagnotte</small>0 €</div>
   </div>
 
   <div class="panel" id="panel"></div>
 
   <div class="ladder" id="ladder">
-    <div class="ladder-title">Stufen</div>
+    <div class="ladder-title">Paliers</div>
   </div>
 </div>
 
 <script>
 const MAIN_QUESTIONS = [
   {
-    q: "Wie hoch ist die zulässige Höchstgeschwindigkeit innerhalb geschlossener Ortschaften, wenn kein Schild etwas anderes vorschreibt?",
+    q: "Quelle est la vitesse maximale autorisée en agglomération en Allemagne, en l'absence de panneau ?",
     options: ["30 km/h", "50 km/h", "60 km/h", "70 km/h"],
     correct: 1
   },
   {
-    q: "Wie hoch ist die zulässige Höchstgeschwindigkeit außerhalb geschlossener Ortschaften auf einer normalen Straße ohne Beschilderung?",
+    q: "Hors agglomération, sur une route normale sans panneau de limitation, quelle est la vitesse maximale ?",
     options: ["80 km/h", "90 km/h", "100 km/h", "120 km/h"],
     correct: 2
   },
   {
-    q: "Welche Richtgeschwindigkeit wird auf deutschen Autobahnen ohne Geschwindigkeitsbegrenzung empfohlen?",
+    q: "Sur une autoroute allemande sans limitation signalée, quelle est la vitesse recommandée (Richtgeschwindigkeit) ?",
     options: ["110 km/h", "120 km/h", "130 km/h", "150 km/h"],
     correct: 2
   },
   {
-    q: "Wie hoch ist die maximal zulässige Blutalkoholkonzentration für erfahrene Fahrer über 21 Jahre?",
+    q: "Quel est le taux d'alcoolémie maximal autorisé pour un conducteur expérimenté de plus de 21 ans ?",
     options: ["0,0 ‰", "0,3 ‰", "0,5 ‰", "0,8 ‰"],
     correct: 2
   },
   {
-    q: "Welche Promillegrenze gilt für Fahranfänger in der Probezeit sowie für Fahrer unter 21 Jahren?",
+    q: "Quel taux d'alcoolémie s'applique aux jeunes conducteurs (permis probatoire ou moins de 21 ans) ?",
     options: ["0,5 ‰", "0,3 ‰", "0,2 ‰", "0,0 ‰"],
     correct: 3
   },
   {
-    q: "Was bedeutet die Regel „rechts vor links“, wenn keine Vorfahrtsschilder vorhanden sind?",
+    q: "En l'absence de panneau, la règle de la « priorité à droite » (rechts vor links) signifie que :",
     options: [
-      "Das schnellere Fahrzeug hat Vorfahrt",
-      "Das von rechts kommende Fahrzeug hat Vorfahrt",
-      "Das größere Fahrzeug hat Vorfahrt",
-      "Wer zuerst an der Kreuzung ankommt, fährt zuerst"
+      "Le véhicule le plus rapide passe en premier",
+      "Le véhicule venant de la droite a la priorité",
+      "Le plus gros véhicule a la priorité",
+      "Le premier arrivé à l'intersection passe"
     ],
     correct: 1
   },
   {
-    q: "Mit welcher Faustregel lässt sich der Mindestsicherheitsabstand auf der Autobahn abschätzen?",
+    q: "Sur autoroute, quelle règle pratique permet d'estimer la distance de sécurité minimale ?",
     options: [
-      "Halber Tacho, also die Hälfte der Geschwindigkeit in Metern",
-      "Ein fester Abstand von 5 Metern",
-      "Die Dauer einer Rotphase",
-      "Zwei Fahrzeuglängen, unabhängig von der Geschwindigkeit"
+      "La moitié de la vitesse, exprimée en mètres",
+      "Une distance fixe de 5 mètres",
+      "Le temps d'un feu rouge",
+      "Deux longueurs de véhicule, quelle que soit la vitesse"
     ],
     correct: 0
   },
   {
-    q: "Was bedeutet ein gelb blinkendes Blinklicht an einer Kreuzung?",
+    q: "À une intersection, un feu orange clignotant signifie :",
     options: [
-      "Alle Fahrzeuge müssen anhalten",
-      "Vorsicht: Es gilt die Vorfahrtsregel rechts vor links",
-      "Die Ampel ist außer Betrieb, Durchfahrt verboten",
-      "Nur Fußgänger haben Vorrang"
+      "Arrêt obligatoire pour tous",
+      "Prudence : la règle de priorité à droite s'applique",
+      "Le feu est hors service, passage interdit",
+      "Priorité uniquement aux piétons"
     ],
     correct: 1
   },
   {
-    q: "Ab welchem Alter darf man in Deutschland mit dem begleiteten Fahren (BF17) beginnen?",
-    options: ["15 Jahre", "16 Jahre", "17 Jahre", "18 Jahre"],
+    q: "En Allemagne, à partir de quel âge peut-on commencer la conduite accompagnée (Begleitetes Fahren) ?",
+    options: ["15 ans", "16 ans", "17 ans", "18 ans"],
     correct: 2
   },
   {
-    q: "Für wen gilt die Anschnallpflicht im Fahrzeug?",
+    q: "Le port de la ceinture de sécurité est obligatoire pour :",
     options: [
-      "Nur für den Fahrer",
-      "Nur für die Insassen auf den Vordersitzen",
-      "Für alle Insassen des Fahrzeugs",
-      "Nur außerhalb geschlossener Ortschaften"
+      "Le conducteur uniquement",
+      "Les passagers avant uniquement",
+      "Tous les occupants du véhicule",
+      "Uniquement en dehors des agglomérations"
     ],
     correct: 2
   }
@@ -924,23 +960,23 @@ const MAIN_QUESTIONS = [
 
 const BONUS_QUESTIONS = [
   {
-    q: "Gilt die Anschnallpflicht auch für Fondpassagiere?",
-    options: ["Ja", "Nein"],
+    q: "Le port de la ceinture est-il obligatoire pour les passagers à l'arrière du véhicule ?",
+    options: ["Oui", "Non"],
     correct: 0
   },
   {
-    q: "Darf man ohne Freisprecheinrichtung während der Fahrt telefonieren?",
-    options: ["Ja", "Nein"],
+    q: "Peut-on téléphoner au volant sans kit mains-libres ?",
+    options: ["Oui", "Non"],
     correct: 1
   },
   {
-    q: "Ist das Setzen des Blinkers beim Fahrstreifenwechsel Pflicht?",
-    options: ["Ja", "Nein"],
+    q: "Le clignotant est-il obligatoire pour changer de voie ?",
+    options: ["Oui", "Non"],
     correct: 0
   },
   {
-    q: "Darf man auf der Autobahn rechts überholen?",
-    options: ["Ja", "Nein"],
+    q: "Peut-on doubler par la droite sur autoroute ?",
+    options: ["Oui", "Non"],
     correct: 1
   }
 ];
@@ -957,7 +993,7 @@ const ladder = document.getElementById("ladder");
 const totalBadge = document.getElementById("totalBadge");
 
 function renderTotal(){
-  totalBadge.innerHTML = `<small>Gewinn</small>${state.total} €`;
+  totalBadge.innerHTML = `<small>Cagnotte</small>${state.total} €`;
 }
 
 function renderLadder(){
@@ -978,7 +1014,7 @@ function renderLadder(){
     const done = i <= state.total;
     const current = state.mode==="main" && i === state.round+1;
     div.className = "rung" + (done?" done":"") + (current?" current":"");
-    div.innerHTML = `<span class="n">F${i}</span><span>${i} €</span>`;
+    div.innerHTML = `<span class="n">Q${i}</span><span>${i} €</span>`;
     ladder.appendChild(div);
   }
 }
@@ -987,10 +1023,10 @@ function renderStart(){
   state = {mode:"start", round:0, total:0, answered:false};
   panel.innerHTML = `
     <div class="screen">
-      <div class="pill">Deutsche Straßenverkehrsordnung</div>
-      <h1>Wer gewinnt die Million?</h1>
-      <p>10 Fragen zur deutschen Straßenverkehrsordnung (StVO) mit je 4 Antwortmöglichkeiten. Jede richtige Antwort bringt <strong>1 €</strong> mehr in den Gewinntopf. Ein Fehler beendet das Spiel — aber du kannst sofort mit einer Bonusrunde neu starten: 4 Fragen mit nur 2 Antwortmöglichkeiten. Schaffst du alle 4, hast du gewonnen!</p>
-      <button class="btn" onclick="startMain()">Spiel starten</button>
+      <div class="pill">Code de la route allemand</div>
+      <h1>Qui gagnera le million ?</h1>
+      <p>10 questions sur le code de la route allemand (StVO), 4 réponses possibles. Chaque bonne réponse rapporte <strong>1 €</strong> de plus dans la cagnotte. Une erreur, et c'est fini — mais tu pourras retenter ta chance avec 4 questions bonus à 2 réponses seulement. Termine les 4 et c'est gagné !</p>
+      <button class="btn" onclick="startMain()">Commencer la partie</button>
     </div>
   `;
   renderTotal();
@@ -1019,7 +1055,7 @@ function renderQuestion(){
 
   panel.innerHTML = `
     <div class="q-wrap">
-      <div class="q-eyebrow">${state.mode === "main" ? "Frage" : "Bonus"} ${state.round+1} / ${total}${state.mode==="main" ? " · wert " + (state.round+1) + " €" : ""}</div>
+      <div class="q-eyebrow">${state.mode === "main" ? "Question" : "Bonus"} ${state.round+1} / ${total}${state.mode==="main" ? " · vaut " + (state.round+1) + " €" : ""}</div>
       <div class="q-sign">${q.q}</div>
       <div class="options ${twoOpt ? "two" : ""}" id="optsWrap">
         ${q.options.map((opt,i) => `
@@ -1050,18 +1086,18 @@ function answer(i){
   if(i === q.correct){
     if(state.mode === "main") state.total += 1;
     feedback.innerHTML = state.mode === "main"
-      ? `Richtig! Gewinntopf: ${state.total} €.`
-      : `Richtig! Bonus ${state.round+1}/4 geschafft.`;
+      ? `Bonne réponse ! Cagnotte : ${state.total} €.`
+      : `Bonne réponse ! Bonus ${state.round+1}/4 validé.`;
     renderTotal();
     footer.innerHTML = `<button class="btn" onclick="next()">${nextLabel()}</button>`;
   } else {
     buttons[i].classList.add("wrong");
     if(state.mode === "main"){
-      feedback.innerHTML = `Falsche Antwort. Das Spiel endet hier — Endstand: ${state.total} €.`;
-      footer.innerHTML = `<button class="btn" onclick="renderLost()">Weiter</button>`;
+      feedback.innerHTML = `Mauvaise réponse. La partie s'arrête ici — cagnotte finale : ${state.total} €.`;
+      footer.innerHTML = `<button class="btn" onclick="renderLost()">Continuer</button>`;
     } else {
-      feedback.innerHTML = `Falsche Antwort in der Bonusrunde. Die Regel bleibt gleich: Die Bonusrunde muss von vorne begonnen werden.`;
-      footer.innerHTML = `<button class="btn" onclick="startBonus()">Bonusrunde wiederholen</button>`;
+      feedback.innerHTML = `Mauvaise réponse dans le round bonus. On garde la même règle : il faut recommencer le bonus depuis le début.`;
+      footer.innerHTML = `<button class="btn" onclick="startBonus()">Refaire le bonus</button>`;
     }
   }
   renderLadder();
@@ -1070,8 +1106,8 @@ function answer(i){
 function nextLabel(){
   const list = state.mode === "main" ? MAIN_QUESTIONS : BONUS_QUESTIONS;
   const isLast = state.round + 1 >= list.length;
-  if(state.mode === "main") return isLast ? "Endergebnis ansehen" : "Nächste Frage";
-  return isLast ? "Sieg ansehen" : "Nächster Bonus";
+  if(state.mode === "main") return isLast ? "Voir le résultat final" : "Question suivante";
+  return isLast ? "Voir la victoire" : "Bonus suivant";
 }
 
 function next(){
@@ -1093,11 +1129,11 @@ function renderLost(){
   state.mode = "lost";
   panel.innerHTML = `
     <div class="screen">
-      <div class="pill">Spiel beendet</div>
+      <div class="pill">Partie terminée</div>
       <div class="badge-euro">${state.total} €</div>
-      <p>Das ist dein Endstand aus der Hauptrunde. Du kannst sofort eine Bonusrunde versuchen: 4 Fragen mit nur 2 Antwortmöglichkeiten. Schaffst du alle 4 ohne Fehler, ist der Sieg garantiert.</p>
-      <button class="btn" onclick="startBonus()">Bonusrunde versuchen</button>
-      <button class="btn secondary" onclick="renderStart()">Von vorne beginnen</button>
+      <p>C'est la cagnotte que tu repars avec sur les questions principales. Tu peux retenter ta chance immédiatement avec un round bonus : 4 questions, seulement 2 réponses possibles à chaque fois. Termine les 4 sans erreur et c'est une victoire garantie.</p>
+      <button class="btn" onclick="startBonus()">Tenter le round bonus</button>
+      <button class="btn secondary" onclick="renderStart()">Recommencer depuis le début</button>
     </div>
   `;
   renderLadder();
@@ -1107,13 +1143,13 @@ function renderWon(fromMain){
   state.mode = "won";
   panel.innerHTML = `
     <div class="screen">
-      <div class="pill">${fromMain ? "10/10 Fragen" : "Bonusrunde geschafft"}</div>
-      <h1>Glückwunsch, gewonnen! 🏁</h1>
-      <div class="badge-euro">${fromMain ? state.total + " €" : "Sieg"}</div>
+      <div class="pill">${fromMain ? "10/10 questions" : "Round bonus complété"}</div>
+      <h1>Bravo, c'est gagné ! 🏁</h1>
+      <div class="badge-euro">${fromMain ? state.total + " €" : "Victoire"}</div>
       <p>${fromMain
-        ? "Du hast alle 10 Fragen zur deutschen Straßenverkehrsordnung richtig beantwortet und den gesamten Gewinn eingesackt."
-        : "Du hast alle 4 Bonusfragen fehlerfrei geschafft — das Spiel ist gewonnen, auch wenn der Hauptgewinn bei " + state.total + " € steht."}</p>
-      <button class="btn" onclick="renderStart()">Nochmal spielen</button>
+        ? "Tu as répondu correctement aux 10 questions du code de la route allemand et remporté toute la cagnotte."
+        : "Tu as validé les 4 questions bonus sans erreur — la partie est remportée, même si la cagnotte principale reste à " + state.total + " €."}</p>
+      <button class="btn" onclick="renderStart()">Rejouer</button>
     </div>
   `;
   renderLadder();
