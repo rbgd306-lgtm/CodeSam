@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Qui gagnera le million — Code de la route allemand</title>
+<title>Who Wants to Win a Million — German Traffic Code</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -293,86 +293,86 @@
 <body>
 <div class="stage">
   <div class="header">
-    <div class="title-sign"><span>Prüfung · Straßenverkehr</span>Qui gagnera le million ?</div>
-    <div class="total-badge" id="totalBadge"><small>Cagnotte</small>0 €</div>
+    <div class="title-sign"><span>Exam · Road Traffic</span>Who Wants to Win a Million?</div>
+    <div class="total-badge" id="totalBadge"><small>Prize Pool</small>€0</div>
   </div>
 
   <div class="panel" id="panel"></div>
 
   <div class="ladder" id="ladder">
-    <div class="ladder-title">Paliers</div>
+    <div class="ladder-title">Levels</div>
   </div>
 </div>
 
 <script>
 const MAIN_QUESTIONS = [
   {
-    q: "Quelle est la vitesse maximale autorisée en agglomération en Allemagne, en l'absence de panneau ?",
+    q: "What is the maximum speed limit within built-up areas in Germany, in the absence of a sign?",
     options: ["30 km/h", "50 km/h", "60 km/h", "70 km/h"],
     correct: 1
   },
   {
-    q: "Hors agglomération, sur une route normale sans panneau de limitation, quelle est la vitesse maximale ?",
+    q: "Outside built-up areas, on a normal road without a speed limit sign, what is the maximum speed?",
     options: ["80 km/h", "90 km/h", "100 km/h", "120 km/h"],
     correct: 2
   },
   {
-    q: "Sur une autoroute allemande sans limitation signalée, quelle est la vitesse recommandée (Richtgeschwindigkeit) ?",
+    q: "On a German motorway with no posted speed limit, what is the recommended speed (Richtgeschwindigkeit)?",
     options: ["110 km/h", "120 km/h", "130 km/h", "150 km/h"],
     correct: 2
   },
   {
-    q: "Quel est le taux d'alcoolémie maximal autorisé pour un conducteur expérimenté de plus de 21 ans ?",
-    options: ["0,0 ‰", "0,3 ‰", "0,5 ‰", "0,8 ‰"],
+    q: "What is the maximum blood alcohol level allowed for an experienced driver over 21?",
+    options: ["0.0 ‰", "0.3 ‰", "0.5 ‰", "0.8 ‰"],
     correct: 2
   },
   {
-    q: "Quel taux d'alcoolémie s'applique aux jeunes conducteurs (permis probatoire ou moins de 21 ans) ?",
-    options: ["0,5 ‰", "0,3 ‰", "0,2 ‰", "0,0 ‰"],
+    q: "What blood alcohol level applies to young drivers (on probation or under 21)?",
+    options: ["0.5 ‰", "0.3 ‰", "0.2 ‰", "0.0 ‰"],
     correct: 3
   },
   {
-    q: "En l'absence de panneau, la règle de la « priorité à droite » (rechts vor links) signifie que :",
+    q: "In the absence of a sign, the \"priority to the right\" rule (rechts vor links) means that:",
     options: [
-      "Le véhicule le plus rapide passe en premier",
-      "Le véhicule venant de la droite a la priorité",
-      "Le plus gros véhicule a la priorité",
-      "Le premier arrivé à l'intersection passe"
+      "The fastest vehicle goes first",
+      "The vehicle coming from the right has priority",
+      "The biggest vehicle has priority",
+      "The first vehicle to arrive at the intersection goes first"
     ],
     correct: 1
   },
   {
-    q: "Sur autoroute, quelle règle pratique permet d'estimer la distance de sécurité minimale ?",
+    q: "On a motorway, which rule of thumb estimates the minimum safe following distance?",
     options: [
-      "La moitié de la vitesse, exprimée en mètres",
-      "Une distance fixe de 5 mètres",
-      "Le temps d'un feu rouge",
-      "Deux longueurs de véhicule, quelle que soit la vitesse"
+      "Half your speed, expressed in meters",
+      "A fixed distance of 5 meters",
+      "The duration of a red light",
+      "Two vehicle lengths, regardless of speed"
     ],
     correct: 0
   },
   {
-    q: "À une intersection, un feu orange clignotant signifie :",
+    q: "At an intersection, a flashing amber light means:",
     options: [
-      "Arrêt obligatoire pour tous",
-      "Prudence : la règle de priorité à droite s'applique",
-      "Le feu est hors service, passage interdit",
-      "Priorité uniquement aux piétons"
+      "Mandatory stop for everyone",
+      "Caution: the priority-to-the-right rule applies",
+      "The light is out of service, no passing allowed",
+      "Priority only for pedestrians"
     ],
     correct: 1
   },
   {
-    q: "En Allemagne, à partir de quel âge peut-on commencer la conduite accompagnée (Begleitetes Fahren) ?",
-    options: ["15 ans", "16 ans", "17 ans", "18 ans"],
+    q: "In Germany, at what age can you start accompanied driving (Begleitetes Fahren)?",
+    options: ["15", "16", "17", "18"],
     correct: 2
   },
   {
-    q: "Le port de la ceinture de sécurité est obligatoire pour :",
+    q: "Wearing a seatbelt is mandatory for:",
     options: [
-      "Le conducteur uniquement",
-      "Les passagers avant uniquement",
-      "Tous les occupants du véhicule",
-      "Uniquement en dehors des agglomérations"
+      "The driver only",
+      "Front-seat passengers only",
+      "All occupants of the vehicle",
+      "Only outside built-up areas"
     ],
     correct: 2
   }
@@ -380,23 +380,23 @@ const MAIN_QUESTIONS = [
 
 const BONUS_QUESTIONS = [
   {
-    q: "Le port de la ceinture est-il obligatoire pour les passagers à l'arrière du véhicule ?",
-    options: ["Oui", "Non"],
+    q: "Is wearing a seatbelt mandatory for rear-seat passengers?",
+    options: ["Yes", "No"],
     correct: 0
   },
   {
-    q: "Peut-on téléphoner au volant sans kit mains-libres ?",
-    options: ["Oui", "Non"],
+    q: "Can you use your phone while driving without a hands-free kit?",
+    options: ["Yes", "No"],
     correct: 1
   },
   {
-    q: "Le clignotant est-il obligatoire pour changer de voie ?",
-    options: ["Oui", "Non"],
+    q: "Is using a turn signal mandatory when changing lanes?",
+    options: ["Yes", "No"],
     correct: 0
   },
   {
-    q: "Peut-on doubler par la droite sur autoroute ?",
-    options: ["Oui", "Non"],
+    q: "Can you overtake on the right on a motorway?",
+    options: ["Yes", "No"],
     correct: 1
   }
 ];
@@ -413,7 +413,7 @@ const ladder = document.getElementById("ladder");
 const totalBadge = document.getElementById("totalBadge");
 
 function renderTotal(){
-  totalBadge.innerHTML = `<small>Cagnotte</small>${state.total} €`;
+  totalBadge.innerHTML = `<small>Prize Pool</small>€${state.total}`;
 }
 
 function renderLadder(){
@@ -434,7 +434,7 @@ function renderLadder(){
     const done = i <= state.total;
     const current = state.mode==="main" && i === state.round+1;
     div.className = "rung" + (done?" done":"") + (current?" current":"");
-    div.innerHTML = `<span class="n">Q${i}</span><span>${i} €</span>`;
+    div.innerHTML = `<span class="n">Q${i}</span><span>€${i}</span>`;
     ladder.appendChild(div);
   }
 }
@@ -443,10 +443,10 @@ function renderStart(){
   state = {mode:"start", round:0, total:0, answered:false};
   panel.innerHTML = `
     <div class="screen">
-      <div class="pill">Code de la route allemand</div>
-      <h1>Qui gagnera le million ?</h1>
-      <p>10 questions sur le code de la route allemand (StVO), 4 réponses possibles. Chaque bonne réponse rapporte <strong>1 €</strong> de plus dans la cagnotte. Une erreur, et c'est fini — mais tu pourras retenter ta chance avec 4 questions bonus à 2 réponses seulement. Termine les 4 et c'est gagné !</p>
-      <button class="btn" onclick="startMain()">Commencer la partie</button>
+      <div class="pill">German Traffic Code</div>
+      <h1>Who Wants to Win a Million?</h1>
+      <p>10 questions on the German traffic code (StVO), 4 possible answers each. Every correct answer adds <strong>€1</strong> to the prize pool. One mistake and it's over — but you'll get a chance to try again with 4 bonus questions with only 2 answer choices. Clear all 4 and you win!</p>
+      <button class="btn" onclick="startMain()">Start the game</button>
     </div>
   `;
   renderTotal();
@@ -475,7 +475,7 @@ function renderQuestion(){
 
   panel.innerHTML = `
     <div class="q-wrap">
-      <div class="q-eyebrow">${state.mode === "main" ? "Question" : "Bonus"} ${state.round+1} / ${total}${state.mode==="main" ? " · vaut " + (state.round+1) + " €" : ""}</div>
+      <div class="q-eyebrow">${state.mode === "main" ? "Question" : "Bonus"} ${state.round+1} / ${total}${state.mode==="main" ? " · worth €" + (state.round+1) : ""}</div>
       <div class="q-sign">${q.q}</div>
       <div class="options ${twoOpt ? "two" : ""}" id="optsWrap">
         ${q.options.map((opt,i) => `
@@ -506,18 +506,18 @@ function answer(i){
   if(i === q.correct){
     if(state.mode === "main") state.total += 1;
     feedback.innerHTML = state.mode === "main"
-      ? `Bonne réponse ! Cagnotte : ${state.total} €.`
-      : `Bonne réponse ! Bonus ${state.round+1}/4 validé.`;
+      ? `Correct! Prize pool: €${state.total}.`
+      : `Correct! Bonus ${state.round+1}/4 cleared.`;
     renderTotal();
     footer.innerHTML = `<button class="btn" onclick="next()">${nextLabel()}</button>`;
   } else {
     buttons[i].classList.add("wrong");
     if(state.mode === "main"){
-      feedback.innerHTML = `Mauvaise réponse. La partie s'arrête ici — cagnotte finale : ${state.total} €.`;
-      footer.innerHTML = `<button class="btn" onclick="renderLost()">Continuer</button>`;
+      feedback.innerHTML = `Wrong answer. The game ends here — final prize pool: €${state.total}.`;
+      footer.innerHTML = `<button class="btn" onclick="renderLost()">Continue</button>`;
     } else {
-      feedback.innerHTML = `Mauvaise réponse dans le round bonus. On garde la même règle : il faut recommencer le bonus depuis le début.`;
-      footer.innerHTML = `<button class="btn" onclick="startBonus()">Refaire le bonus</button>`;
+      feedback.innerHTML = `Wrong answer in the bonus round. Same rule applies: you need to restart the bonus round from the beginning.`;
+      footer.innerHTML = `<button class="btn" onclick="startBonus()">Retry the bonus round</button>`;
     }
   }
   renderLadder();
@@ -526,8 +526,8 @@ function answer(i){
 function nextLabel(){
   const list = state.mode === "main" ? MAIN_QUESTIONS : BONUS_QUESTIONS;
   const isLast = state.round + 1 >= list.length;
-  if(state.mode === "main") return isLast ? "Voir le résultat final" : "Question suivante";
-  return isLast ? "Voir la victoire" : "Bonus suivant";
+  if(state.mode === "main") return isLast ? "See the final result" : "Next question";
+  return isLast ? "See the win" : "Next bonus";
 }
 
 function next(){
@@ -549,11 +549,11 @@ function renderLost(){
   state.mode = "lost";
   panel.innerHTML = `
     <div class="screen">
-      <div class="pill">Partie terminée</div>
-      <div class="badge-euro">${state.total} €</div>
-      <p>C'est la cagnotte que tu repars avec sur les questions principales. Tu peux retenter ta chance immédiatement avec un round bonus : 4 questions, seulement 2 réponses possibles à chaque fois. Termine les 4 sans erreur et c'est une victoire garantie.</p>
-      <button class="btn" onclick="startBonus()">Tenter le round bonus</button>
-      <button class="btn secondary" onclick="renderStart()">Recommencer depuis le début</button>
+      <div class="pill">Game over</div>
+      <div class="badge-euro">€${state.total}</div>
+      <p>That's the prize pool you take home from the main questions. You can try your luck again right away with a bonus round: 4 questions, only 2 possible answers each time. Clear all 4 without a mistake and it's a guaranteed win.</p>
+      <button class="btn" onclick="startBonus()">Try the bonus round</button>
+      <button class="btn secondary" onclick="renderStart()">Start over</button>
     </div>
   `;
   renderLadder();
@@ -563,13 +563,13 @@ function renderWon(fromMain){
   state.mode = "won";
   panel.innerHTML = `
     <div class="screen">
-      <div class="pill">${fromMain ? "10/10 questions" : "Round bonus complété"}</div>
-      <h1>Bravo, c'est gagné ! 🏁</h1>
-      <div class="badge-euro">${fromMain ? state.total + " €" : "Victoire"}</div>
+      <div class="pill">${fromMain ? "10/10 questions" : "Bonus round completed"}</div>
+      <h1>Congratulations, you won! 🏁</h1>
+      <div class="badge-euro">${fromMain ? "€" + state.total : "Victory"}</div>
       <p>${fromMain
-        ? "Tu as répondu correctement aux 10 questions du code de la route allemand et remporté toute la cagnotte."
-        : "Tu as validé les 4 questions bonus sans erreur — la partie est remportée, même si la cagnotte principale reste à " + state.total + " €."}</p>
-      <button class="btn" onclick="renderStart()">Rejouer</button>
+        ? "You answered all 10 German traffic code questions correctly and won the entire prize pool."
+        : "You cleared the 4 bonus questions without a mistake — the game is won, even though the main prize pool stays at €" + state.total + "."}</p>
+      <button class="btn" onclick="renderStart()">Play again</button>
     </div>
   `;
   renderLadder();
